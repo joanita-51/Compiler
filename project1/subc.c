@@ -1,9 +1,8 @@
 #include <stdio.h>
 #include "subc.h"
 
-extern int yylex();
-extern int yylineno;
-extern char* yytext;
+extern int yylex(); //main entry-point for lex.
+extern char* yytext; //pointer to the matched string
 
 int main(){
     int idtoken;

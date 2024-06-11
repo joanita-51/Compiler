@@ -12,7 +12,7 @@
 
 %%
 
-int yywrap(void)
+int yywrap(void)  //Function yywrap is called by lex when input is exhausted. 
 {
     return 1;
 }
