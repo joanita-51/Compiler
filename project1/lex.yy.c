@@ -670,7 +670,8 @@ YY_DECL
 	{
 #line 5 "subc.l"
 
-#line 674 "lex.yy.c"
+
+#line 675 "lex.yy.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -729,36 +730,36 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 6 "subc.l"
-return IDENTIFIER;
+#line 7 "subc.l"
+return IDENTIFIER; // "auto"|"break"|"case"|"char"|"continue"|"default"|"do"|"double"|"else"|"extern"|"float"|"for"|"goto"|"if"|"int"|"long"|"register"|"return"|"short"|"sizeof"|"static"|"struct"|"switch"|"typedef"|"union"|"unsigned"|"void"|"while"|...  return KEYWORD;
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 7 "subc.l"
+#line 8 "subc.l"
 return INTEGER;
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 8 "subc.l"
+#line 9 "subc.l"
 return FLOAT;
 	YY_BREAK
 case 4:
 /* rule 4 can match eol */
 YY_RULE_SETUP
-#line 9 "subc.l"
+#line 10 "subc.l"
 ;               // Rule to ignore whitespace
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 10 "subc.l"
+#line 11 "subc.l"
 return OPERATOR; // Catch for operators
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 12 "subc.l"
+#line 13 "subc.l"
 ECHO;
 	YY_BREAK
-#line 762 "lex.yy.c"
+#line 763 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1763,7 +1764,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 12 "subc.l"
+#line 13 "subc.l"
 
 
 int yywrap(void)

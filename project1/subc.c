@@ -13,6 +13,9 @@ int main(){
     {
         switch (idtoken)
         {
+        case 1:
+            printf("KEY\t %s\n", yytext);
+            break;
         case 2:
             printf("ID\t %s\n", yytext);
             break;
@@ -26,7 +29,7 @@ int main(){
             printf("OP\t %s\n", yytext);
             break;
         default:
-            printf("Unspecified operator");
+            printf("Unspecified token type");
             break;
         }
         idtoken = yylex();
