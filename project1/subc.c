@@ -11,10 +11,25 @@ int main(){
     idtoken = yylex();
     while (idtoken)
     {
-        printf("%d\t", idtoken);
-        printf("%s \n", yytext);
-
+        switch (idtoken)
+        {
+        case 2:
+            printf("ID\t %s\n", yytext);
+            break;
+        case 3:
+            printf("INT\t %s\n", yytext);
+            break;
+        case 4:
+            printf("F\t %s\n", yytext);
+            break;
+        case 5:
+            printf("OP\t %s\n", yytext);
+            break;
+        default:
+            printf("Unspecified operator");
+            break;
+        }
         idtoken = yylex();
     } 
-
+    return 0;
 }
