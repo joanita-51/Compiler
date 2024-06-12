@@ -12,19 +12,19 @@ int main(){
     {
         switch (idtoken)
         {
-        case 1:
+        case KEYWORD:
             printf("KEY\t %s\n", yytext);
             break;
-        case 2:
+        case IDENTIFIER:
             printf("ID\t %s\n", yytext);
             break;
-        case 3:
+        case INTEGER:
             printf("INT\t %s\n", yytext);
             break;
-        case 4:
+        case FLOAT:
             printf("F\t %s\n", yytext);
             break;
-        case 5:
+        case OPERATOR:
             printf("OP\t %s\n", yytext);
             break;
         default:
