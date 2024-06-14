@@ -1,3 +1,7 @@
+/************************
+   /* nested comments*/
+
+
 struct _point {
     float x, y, z;
     int color;
