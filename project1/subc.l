@@ -10,15 +10,16 @@ int comment_depth=0; // To track the depth of nested comments
 [_a-zA-Z][_a-zA-Z0-9]*    return IDENTIFIER;
 [0-9]+    return INTEGER;
 [-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?   return FLOAT;
-"/*"         {comment_depth=1;  BEGIN(COMMENT);}
+"/*"         { BEGIN(COMMENT);}
 [ \t\n]                 ;               // Rule to ignore whitespace
 .                               return OPERATOR; // Catch for operators
 
 <COMMENT>{
-    "/*"    comment_depth++;
-    "*/"    if(--comment_depth == 0) BEGIN(INITIAL);
+    "/*"    ++comment_depth;
+    "*/"    {if(comment_depth) --comment_depth; 
+            else BEGIN(INITIAL);}
     .|\n  ;
-    "*"+     ;
+
 }
 
 %%
